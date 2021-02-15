@@ -5,8 +5,6 @@ const progressBar = document.querySelector('.progress-bar')
 
 let current_state = 1;
 
-console.log(progressBar)
-
 
 
 function changeBorderStyle() {
@@ -17,17 +15,17 @@ function changeBorderStyle() {
 }
 
 function increaseState() {
-    if(current_state < 4) {
+    if(current_state < steps.length) {
         current_state++;
         btnNext.disabled = false;
         btnPrev.disabled = false;
         changeBorderStyle()
     } 
 
-    if (current_state === 4)
+    if (current_state === steps.length)
         btnNext.disabled = true
 
-    progressBar.style.width = `${(((current_state - 1) / 3) * 100)}%`;
+    progressBar.style.width = `${(((current_state - 1) / (steps.length - 1)) * 100)}%`;
 }
 
 function decreaseState() {
@@ -42,7 +40,7 @@ function decreaseState() {
     if(current_state === 1)
         btnPrev.disabled = true;
     
-    progressBar.style.width = `${((current_state - 1) / 3)*100}%`;
+    progressBar.style.width = `${((current_state - 1) / (steps.length - 1))*100}%`;
 }
 
 btnPrev.addEventListener('click', decreaseState)
