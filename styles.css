@@ -53,6 +53,7 @@ body {
     height: 1rem;
     background-color: #2437e0;
     z-index: -1;
+    transition: .7s ease-in;
 }
 
 .steps__number {
@@ -67,6 +68,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: border-color 0.7s ease-in;
 }
 
 .steps__number.active {
